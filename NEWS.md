@@ -1,3 +1,8 @@
+# wildcatdown 0.0.1
+
+- Replaced UW templates with KSU templates, tested and debugged.
+
+
 # huskydown 0.0.4
 
 - CI on OSX and Linux, collect artefacts and issue PDF

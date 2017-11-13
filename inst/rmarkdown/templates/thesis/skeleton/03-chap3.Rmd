@@ -1,6 +1,6 @@
 ```{r include_packages_2, include = FALSE}
-# This chunk ensures that the huskydown package is
-# installed and loaded. This huskydown package includes
+# This chunk ensures that the wildcatdown package is
+# installed and loaded. This wildcatdown package includes
 # the template files for the thesis and also two functions
 # used for labeling and referencing
 if(!require(devtools))
@@ -11,11 +11,11 @@ if(!require(ggplot2))
     install.packages("ggplot2", repos = "http://cran.rstudio.com")
 if(!require(ggplot2))
     install.packages("bookdown", repos = "http://cran.rstudio.com")
-if(!require(huskydown)){
+if(!require(wildcatdown)){
   library(devtools)
-  devtools::install_github("benmarwick/huskydown")
+  devtools::install_github("emraher/wildcatdown")
   }
-library(huskydown)
+library(wildcatdown)
 flights <- read.csv("data/flights.csv")
 ```
 
@@ -64,13 +64,13 @@ If you need a graphic or tabular material to be part of the text, you can just p
 -->
 
 
-In the **R** chunk below, we will load in a picture stored as `uw.png` in our main directory.  We then give it the caption of "UW logo", the label of "uwlogo", and specify that this is a figure.  Make note of the different **R** chunk options that are given in the R Markdown file (not shown in the knitted document).
+In the **R** chunk below, we will load in a picture stored as `ksu.png` in our main directory.  We then give it the caption of "KSU logo", the label of "ksulogo", and specify that this is a figure.  Make note of the different **R** chunk options that are given in the R Markdown file (not shown in the knitted document).
 
-```{r uwlogo, fig.cap="UW logo"}
-include_graphics(path = "figure/uw.png")
+```{r ksulogo, fig.cap="KSU logo", fig.align="center"}
+include_graphics(path = "figure/ksu.png")
 ```
 
-Here is a reference to the UW logo: Figure \@ref(fig:uwlogo).  Note the use of the `fig:` code here.  By naming the **R** chunk that contains the figure, we can then reference that figure later as done in the first sentence here.  We can also specify the caption for the figure via the R chunk option `fig.cap`.
+Here is a reference to the KSU logo: Figure \@ref(fig:ksulogo).  Note the use of the `fig:` code here.  By naming the **R** chunk that contains the figure, we can then reference that figure later as done in the first sentence here.  We can also specify the caption for the figure via the R chunk option `fig.cap`.
 
 \clearpage 
 
@@ -133,5 +133,5 @@ If you look at the YAML header at the top of the main .Rmd file you can see that
 
 ## Anything else?
 
-If you'd like to see examples of other things in this template, please [contact us](https://github.com/benmarwick/huskydown/issues/new) (email <bmarwick@uw.edu>) with your suggestions. We love to see people using _R Markdown_ for their theses, and are happy to help.
+If you'd like to see examples of other things in this template, please [contact us](https://github.com/emraher/wildcatdown/issues/new) (email <eer@eremrah.com>) with your suggestions. We love to see people using _R Markdown_ for their theses, and are happy to help.
 

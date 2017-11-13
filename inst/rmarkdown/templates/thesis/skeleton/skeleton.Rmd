@@ -1,26 +1,26 @@
 ---
-# UW thesis fields
-title: "My thesis title - edit in index.Rmd"
+# KSU thesis fields
+title: "My Thesis Title"
 author: "My Name"
-year: "2017"
-program: "My Department"
-chair: "Name of my committee chair"
-signature: ["committee member 1", "committee member 2"]
-abstract: |
-  "Here is my abstract"
-acknowledgments: |
-  "My acknowledgments"
-dedication: |
-  "My dedication"
-# End of UW thesis fields
+year: "Year"
+department: "My Department"
+college: "My College"
+school: "My School"
+degree: "My Degree"
+majorprofessor: "Name of My Major Professor"
+previousdegrees: "My Previous Degrees"
+dedication: "My dedication"
+acknowledgements: "My acknowledgements"
+abstract: "My abstract"
+# End of KSU thesis fields
 knit: "bookdown::render_book"
 site: bookdown::bookdown_site
 output: 
-  huskydown::thesis_pdf: 
+  wildcatdown::thesis_pdf: 
     latex_engine: xelatex
-#  huskydown::thesis_gitbook: default
-#  huskydown::thesis_word: default
-#  huskydown::thesis_epub: default
+#  wildcatdown::thesis_gitbook: default
+#  wildcatdown::thesis_word: default
+#  wildcatdown::thesis_epub: default
 bibliography: bib/thesis.bib
 # Download your specific bibliography database file and refer to it in the line above.
 csl: csl/apa.csl
@@ -45,21 +45,21 @@ If you receive a duplicate label error after knitting, make sure to delete the i
 -->
 
 ```{r include_packages, include = FALSE}
-# This chunk ensures that the huskydown package is
-# installed and loaded. This huskydown package includes
+# This chunk ensures that the wildcatdown package is
+# installed and loaded. This wildcatdown package includes
 # the template files for the thesis.
 if(!require(devtools))
   install.packages("devtools", repos = "http://cran.rstudio.com")
-if(!require(huskydown))
-  devtools::install_github("benmarwick/huskydown")
-library(huskydown)
+if(!require(wildcatdown))
+  devtools::install_github("emraher/wildcatdown")
+library(wildcatdown)
 ```
 
 <!-- The {.unnumbered} option here means that the introduction will be "Chapter 0." You can also use {-} for no numbers on chapters. -->
 
 # Introduction {.unnumbered}
 
-Welcome to the _R Markdown_ thesis template. This template is based on (and in many places copied directly from) the UW LaTeX template, but hopefully it will provide a nicer interface for those that have never used TeX or LaTeX before. Using _R Markdown_ will also allow you to easily keep track of your analyses in **R** chunks of code, with the resulting plots and output included as well. The hope is this _R Markdown_ template gets you in the habit of doing reproducible research, which benefits you long-term as a researcher, but also will greatly help anyone that is trying to reproduce or build onto your results down the road.
+Welcome to the _R Markdown_ thesis template. This template is based on (and in many places copied directly from) the KSU LaTeX template, but hopefully it will provide a nicer interface for those that have never used TeX or LaTeX before. Using _R Markdown_ will also allow you to easily keep track of your analyses in **R** chunks of code, with the resulting plots and output included as well. The hope is this _R Markdown_ template gets you in the habit of doing reproducible research, which benefits you long-term as a researcher, but also will greatly help anyone that is trying to reproduce or build onto your results down the road.
 
 Hopefully, you won't have much of a learning period to go through and you will reap the benefits of a nicely formatted thesis. The use of LaTeX in combination with _Markdown_ is more consistent than the output of a word processor, much less prone to corruption or crashing, and the resulting file is smaller than a Word file. While you may have never had problems using Word in the past, your thesis is likely going to be at least twice as large and complex as anything you've written before, taxing Word's capabilities. After working with _Markdown_ and **R** together for a few weeks, we are confident this will be your reporting style of choice going forward.
 

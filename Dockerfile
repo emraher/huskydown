@@ -2,9 +2,9 @@
 FROM rocker/verse:3.4.1
 
 # required
-MAINTAINER Ben Marwick <bmarwick@uw.edu>
+MAINTAINER Emrah Er <eer@eremrah.com>
 
-COPY . /huskydown
+COPY . /wildcatdown
 
 # go into the repo directory
 RUN . /etc/environment \
@@ -22,8 +22,8 @@ RUN . /etc/environment \
   && sudo apt-get install fonts-lato -y \
 
   # build this compendium package
-  && R -e "devtools::install('/huskydown', dep=TRUE)" \
+  && R -e "devtools::install('/wildcatdown', dep=TRUE)" \
 
  # make a PhD thesis from the template, remove pre-built PDF,
  # then render new thesis into a PDF, then check it could work:
-  && R -e "rmarkdown::draft('index.Rmd', template = 'thesis', package = 'huskydown', create_dir = TRUE, edit = FALSE); setwd('index'); file.remove('_book/thesis.pdf'); bookdown::render_book('index.Rmd', huskydown::thesis_pdf(latex_engine = 'xelatex')); file.exists('_book/thesis.pdf')"
+  && R -e "rmarkdown::draft('index.Rmd', template = 'thesis', package = 'wildcatdown', create_dir = TRUE, edit = FALSE); setwd('index'); file.remove('_book/thesis.pdf'); bookdown::render_book('index.Rmd', wildcatdown::thesis_pdf(latex_engine = 'xelatex')); file.exists('_book/thesis.pdf')"

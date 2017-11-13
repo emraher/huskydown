@@ -25,6 +25,6 @@ to specify using the Reed College Senior Thesis LaTeX template and cls files.
 }
 \examples{
 \dontrun{
- output: huskydown::thesis_pdf
+ output: wildcatdown::thesis_pdf
 }
 }

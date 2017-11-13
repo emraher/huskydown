@@ -1,20 +1,20 @@
  
 
-# huskydown <img src="inst/rmarkdown/templates/thesis/skeleton/figure/uw-100px.png" align="right" />
+# wildcatdown <img src="inst/rmarkdown/templates/thesis/skeleton/figure/ksu.png" align="right" />
 
-[![Travis-CI Build Status](https://travis-ci.org/benmarwick/huskydown.svg?branch=master)](https://travis-ci.org/benmarwick/huskydown)
+[![Travis-CI Build Status](https://travis-ci.org/emraher/wildcatdown.svg?branch=master)](https://travis-ci.org/emraher/wildcatdown)
 
-This project provides a template for writing a PhD thesis in R Markdown, and rendering those files into a PDF formatted according to [the requirements of the University of Washington](https://grad.uw.edu/for-students-and-post-docs/thesisdissertation/final-submission-of-your-thesisdissertation/). It uses the [University of Washington Thesis class](http://staff.washington.edu/fox/tex/) to convert R Markdown files into a PDF formatted ready for submission at UW. This project was inspired by the [thesisdown](https://github.com/ismayc/thesisdown) and [bookdown](https://github.com/rstudio/bookdown) packages.
+This project provides a template for writing a PhD thesis in R Markdown, and rendering those files into a PDF formatted according to [the requirements of the Kansas State University](https://www.k-state.edu/grad/etdr/etdr-handbook.pdf). It uses the [Kansas State University Thesis class](https://www.k-state.edu/grad/etdr/template/latex_source.zip) to convert R Markdown files into a PDF formatted ready for submission at KSU. This project was inspired by the [thesisdown](https://github.com/ismayc/thesisdown), [bookdown](https://github.com/rstudio/bookdown), and [huskydown](https://github.com/benmarwick/huskydown) packages.
 
 Currently, the PDF and gitbook versions are fully-functional. The word and epub versions are developmental, have no templates behind them, and are essentially calls to the appropriate functions in bookdown.
 
-If you are new to working with `bookdown` and `rmarkdown`, please read over the documentation available in huskydown [PDF template](index/_book/thesis.pdf) and the [bookdown book](https://bookdown.org/yihui/bookdown/).
+If you are new to working with `bookdown` and `rmarkdown`, please read over the documentation available in wildcatdown [PDF template](index/_book/thesis.pdf) and the [bookdown book](https://bookdown.org/yihui/bookdown/).
 
-Under the hood, the [University of Washington Thesis LaTeX template](https://github.com/UWIT-IAM/UWThesis) is used to ensure that documents conform precisely to submission standards. At the same time, composition and formatting can be done using lightweight [markdown](http://rmarkdown.rstudio.com/authoring_basics.html) syntax, and **R** code and its output can be seamlessly included using [rmarkdown](http://rmarkdown.rstudio.com).
+Under the hood, the [Kansas State University Thesis LaTeX template](https://www.k-state.edu/grad/etdr/template/latex_source.zip) is used to ensure that documents conform precisely to submission standards. At the same time, composition and formatting can be done using lightweight [markdown](http://rmarkdown.rstudio.com/authoring_basics.html) syntax, and **R** code and its output can be seamlessly included using [rmarkdown](http://rmarkdown.rstudio.com).
 
-## Using huskydown to write your PhD thesis
+## Using wildcatdown to write your PhD thesis
 
-Using **huskydown** has some prerequisites which are described below. To compile PDF documents using **R**, you need to have LaTeX installed. It can be downloaded for Windows at <http://http://miktex.org/download> and for OSX at <http://tug.org/mactex/mactex-download.html>.  Follow the instructions to install the necessary packages after downloading the (somewhat large) installer files. You may need to install a few extra LaTeX packages on your first attempt to knit as well.
+Using **wildcatdown** has some prerequisites which are described below. To compile PDF documents using **R**, you need to have LaTeX installed. It can be downloaded for Windows at <http://http://miktex.org/download> and for OSX at <http://tug.org/mactex/mactex-download.html>.  Follow the instructions to install the necessary packages after downloading the (somewhat large) installer files. You may need to install a few extra LaTeX packages on your first attempt to knit as well.
 
 We use some fonts, [EB Garamond](https://github.com/georgd/EB-Garamond), [Source Code Pro](https://github.com/adobe-fonts/source-code-pro/) and [Lato](http://www.latofonts.com/lato-free-fonts/), that all are freely available online if you don't have them already. You should install these before proceeding. 
 
@@ -43,28 +43,28 @@ sudo tlmgr install biblatex titling titlesec quotchap lettrine appendix units to
 
 On Windows the usual pointing and clicking is required to download and install [LaTeX](http://http://miktex.org/download) and the fonts listed above. 
 
-To use **huskydown** from RStudio:
+To use **wildcatdown** from RStudio:
 
-1) Assuming you have already installed LaTeX and the fonts described above, install the latest version of [RStudio](http://www.rstudio.com/products/rstudio/download/). You can use huskydown without RStudio. For example, you can write the Rmd files in your favourite text editor (e.g. [Atom](https://atom.io/), [Notepad++](https://notepad-plus-plus.org/)). But RStudio is probably the easiest tool for writing both R code and text in your thesis. 
+1) Assuming you have already installed LaTeX and the fonts described above, install the latest version of [RStudio](http://www.rstudio.com/products/rstudio/download/). You can use wildcatdown without RStudio. For example, you can write the Rmd files in your favourite text editor (e.g. [Atom](https://atom.io/), [Notepad++](https://notepad-plus-plus.org/)). But RStudio is probably the easiest tool for writing both R code and text in your thesis. 
 
-2) Install the **bookdown** and **huskydown** packages: 
+2) Install the **bookdown** and **wildcatdown** packages: 
 
 ```
 if (!require("devtools")) install.packages("devtools", repos = "http://cran.rstudio.org")
 devtools::install_github("rstudio/bookdown")
-devtools::install_github("benmarwick/huskydown")
+devtools::install_github("emraher/wildcatdown")
 ```
 
 3) Use the **New R Markdown** dialog to select **Thesis**, here are the steps, and a screenshot below:
 
-File -> New File -> R Markdown... then choose 'From template', then choose 'UW-Thesis, and enter `index` as the **Name**. Note that this will currently only **Knit** if you name the directory `index` at this step. 
+File -> New File -> R Markdown... then choose 'From template', then choose 'KSU-Thesis, and enter `index` as the **Name**. Note that this will currently only **Knit** if you name the directory `index` at this step. 
 
-![](uw_thesis_rmd.png)
+![](ksu_thesis_rmd.png)
 
 Or if you're not using RStudio, run this line to create a new PhD thesis from the template:
 
 ```r
-rmarkdown::draft('index.Rmd', template = 'thesis', package = 'huskydown', create_dir = TRUE)
+rmarkdown::draft('index.Rmd', template = 'thesis', package = 'wildcatdown', create_dir = TRUE)
 ```
 
 
@@ -80,7 +80,7 @@ you don't want.
 Alternatively, if you're not using RStudio, you can use this from the R console:
 
 ```r
-bookdown::render_book('index.Rmd', huskydown::thesis_pdf(latex_engine = 'xelatex'))
+bookdown::render_book('index.Rmd', wildcatdown::thesis_pdf(latex_engine = 'xelatex'))
 ```
 
 Your thesis will be deposited in the `_book/` directory.
@@ -120,6 +120,7 @@ Store your figures and data here and reference them in your R Markdown files.
 
 This project has drawn directly on code and ideas in the following:
 
+- https://github.com/benmarwick/huskydown
 - https://github.com/UWIT-IAM/UWThesis    
 - https://github.com/stevenpollack/ucbthesis  
 - https://github.com/suchow/Dissertate    
@@ -140,11 +141,11 @@ If you would like to contribute to this project, please start by reading our [Gu
 <!--
 To update the PDF template stored in inst/ assuming we are at top level:
 
-rmarkdown::draft('index.Rmd', template = 'thesis', package = 'huskydown', create_dir = TRUE, edit = FALSE)
+rmarkdown::draft('index.Rmd', template = 'thesis', package = 'wildcatdown', create_dir = TRUE, edit = FALSE)
 
 setwd('index')
 
-bookdown::render_book('index.Rmd', huskydown::thesis_pdf(latex_engine = 'xelatex'))
+bookdown::render_book('index.Rmd', wildcatdown::thesis_pdf(latex_engine = 'xelatex'))
 
 -->
 

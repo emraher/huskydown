@@ -1,15 +1,16 @@
-Package: huskydown
-Title: A R Markdown thesis template for the University of Washingtone
-Version: 0.0.4
+Package: wildcatdown
+Title: A R Markdown thesis template for the Kansas State University
+Version: 0.0.1
 Authors@R: c(
     person("Chester", "Ismay", email = "chester.ismay@gmail.com", role = "cre"),
     person("Nick", "Solomon", email = "nick@nicksolomon.me", role = "aut"),
-    person("Ben", "Marwick", email = "benmarwick@gmail.com", role = "aut"))
+    person("Ben", "Marwick", email = "benmarwick@gmail.com", role = "aut"),
+    person("Emrah", "Er", email = "eer@eremrah.com", role = "aut"))
 Description: Using the bookdown package and LaTeX and Word thesis templates from
-    UW, this package aims to encourage reproducible research using
+    KSU, this package aims to encourage reproducible research using
     simple Markdown syntax while embedding all of the R code to produce plots
-    and analyses as well. Based on Chester Ismay's thesisdown.
-Maintainer: Ben Marwick <bmarwick@uw.edu>
+    and analyses as well. Based on Chester Ismay's thesisdown and Ben Marwick's huskydown.
+Maintainer: Emrah Er <eer@eremrah.com>
 Depends:
     R (>= 3.2.0),
     devtools,

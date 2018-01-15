@@ -84,7 +84,7 @@
    \setcounter{page}{-1}
    \setlength{\baselineskip}{0.8cm}
    \pdfbookmark[0]{Abstract}{PDFAbstractPage}
-   \@AbstractText\\
+   \@AbstractText
    \vfill
    \end{abstract}
    \let\AbstractTextPageOne\relax}
@@ -162,7 +162,7 @@
 \def\AbstractTextPageTwo{
    \begin{abstract}
    \setlength{\baselineskip}{0.8cm}
-   \@AbstractText\\
+   \@AbstractText
    \vfill
    \end{abstract}
    \let\AbstractTextPageTwo\relax}
@@ -179,7 +179,7 @@
 %   \setlength{\baselineskip}{0.8cm}
 %   \@Acknowledgements
 %   \let\AcknowledgementsPage\relax}
-   
+
 \def\textofAcknowledgements#1{\gdef\@textofAcknowledgements{#1}}  \textofAcknowledgements{Acknowledgements}
 
 \long\def\AcknowledgementsPage#1{
@@ -194,7 +194,7 @@
    \end{center}
    \vfill\clearpage
    \let\AcknowledgementsPage\relax}
-   
+
 % +--------------------------------------------------------------------+
 % |  Dedication Page
 % +--------------------------------------------------------------------+

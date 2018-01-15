@@ -1,21 +1,18 @@
 # Colophon {-}
 
-The body text is set at 12pt with $\familydefault$. 
+The document was written in R Markdown and $\LaTeX$, and rendered into PDF using [wildcatdown](https://github.com/emraher/wildcatdown) and [bookdown](https://github.com/rstudio/bookdown). 
 
-It was written in R Markdown and $\LaTeX$, and rendered into PDF using [wildcatdown](https://github.com/emraher/wildcatdown) and [bookdown](https://github.com/rstudio/bookdown). 
+This document was typeset using the Xe$\TeX$ typesetting system, and the [Kansas State University Thesis ](https://www.k-state.edu/grad/etdr/template/latex_source.zip) class. Under the hood, the [Kansas State University Thesis $\LaTeX$ template](https://www.k-state.edu/grad/etdr/template/latex_source.zip) is used to ensure that documents conform precisely to submission standards. Other elements of the document formatting source code have been taken from the [$\LaTeX$, Knitr, and RMarkdown templates for UC Berkeley's graduate thesis](https://github.com/stevenpollack/ucbthesis), and [Dissertate: a $\LaTeX$ dissertation template to support the production and typesetting of a PhD dissertation at Harvard, Princeton, and NYU](https://github.com/suchow/Dissertate)
 
-This document was typeset using the XeTeX typesetting system, and the [Kansas State University Thesis ](https://www.k-state.edu/grad/etdr/template/latex_source.zip) class. Under the hood, the [Kansas State University Thesis LaTeX template](https://www.k-state.edu/grad/etdr/template/latex_source.zip) is used to ensure that documents conform precisely to submission standards. Other elements of the document formatting source code have been taken from the [Latex, Knitr, and RMarkdown templates for UC Berkeley's graduate thesis](https://github.com/stevenpollack/ucbthesis), and [Dissertate: a LaTeX dissertation template to support the production and typesetting of a PhD dissertation at Harvard, Princeton, and NYU](https://github.com/suchow/Dissertate)
-
-The source files for this thesis, along with all the data files, have been organised into an R package, xxx, which is available at https://github.com/xxx/xxx. A hard copy of the thesis can be found in the Kansas State University library.
+The source files for this thesis, along with all the data files, have been organised into an R package, xxx, which is available at https://github.com/xxx/xxx.
 
 This version of the thesis was generated on `r Sys.time()`. The repository is currently at this commit:
 
 ```{r echo = FALSE, eval = FALSE}
 # I've set eval=FALSE to ensure Travis-CI can run
 # if you're not using Travis-CI, then eval=TRUE will be fine
-library(git2r)
-if ( in_repository() ) {
-       summary(commits()[[1]]) 
+if (git2r::in_repository()) {
+       git2r::commits()[[1]]
 } else { 
        message("We are not in a git repository") 
 }

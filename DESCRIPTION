@@ -1,11 +1,12 @@
 Package: wildcatdown
-Title: A R Markdown thesis template for the Kansas State University
+Title: An R Markdown thesis template for the Kansas State University
 Version: 0.0.1
 Authors@R: c(
-    person("Chester", "Ismay", email = "chester.ismay@gmail.com", role = "cre"),
+    person("Chester", "Ismay", email = "chester.ismay@gmail.com", role = c("cre", "aut")),
     person("Nick", "Solomon", email = "nick@nicksolomon.me", role = "aut"),
     person("Ben", "Marwick", email = "benmarwick@gmail.com", role = "aut"),
-    person("Emrah", "Er", email = "eer@eremrah.com", role = "aut"))
+    person("Emrah", "Er", email = "eer@eremrah.com", role = "aut")
+    )
 Description: Using the bookdown package and LaTeX and Word thesis templates from
     KSU, this package aims to encourage reproducible research using
     simple Markdown syntax while embedding all of the R code to produce plots

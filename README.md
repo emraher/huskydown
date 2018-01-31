@@ -1,8 +1,11 @@
- 
+
 
 # wildcatdown <img src="inst/rmarkdown/templates/thesis/skeleton/figure/ksu.png" align="right" />
 
-[![Travis-CI Build Status](https://travis-ci.org/emraher/wildcatdown.svg?branch=master)](https://travis-ci.org/emraher/wildcatdown)
+[![Linux Build
+Status](https://travis-ci.org/emraher/wildcatdown.svg?branch=master)](https://travis-ci.org/emraher/wildcatdown)
+[![Windows Build
+status](https://ci.appveyor.com/api/projects/status/4ejevtp69fcrr31o?svg=true)](https://ci.appveyor.com/project/emraher/wildcatdown)
 
 This project provides a template for writing a PhD thesis in R Markdown, and rendering those files into a PDF formatted according to [the requirements of the Kansas State University](https://www.k-state.edu/grad/etdr/etdr-handbook.pdf). It uses the [Kansas State University Thesis class](https://www.k-state.edu/grad/etdr/template/latex_source.zip) to convert R Markdown files into a PDF formatted ready for submission at KSU. This project was inspired by the [thesisdown](https://github.com/ismayc/thesisdown), [bookdown](https://github.com/rstudio/bookdown), and [huskydown](https://github.com/benmarwick/huskydown) packages.
 
@@ -16,19 +19,19 @@ Under the hood, the [Kansas State University Thesis LaTeX template](https://www.
 
 Using **wildcatdown** has some prerequisites which are described below. To compile PDF documents using **R**, you need to have LaTeX installed. It can be downloaded for Windows at <http://http://miktex.org/download> and for OSX at <http://tug.org/mactex/mactex-download.html>.  Follow the instructions to install the necessary packages after downloading the (somewhat large) installer files. You may need to install a few extra LaTeX packages on your first attempt to knit as well.
 
-We use some fonts, [EB Garamond](https://github.com/georgd/EB-Garamond), [Source Code Pro](https://github.com/adobe-fonts/source-code-pro/) and [Lato](http://www.latofonts.com/lato-free-fonts/), that all are freely available online if you don't have them already. You should install these before proceeding. 
+We use some fonts, [EB Garamond](https://github.com/georgd/EB-Garamond), [Source Code Pro](https://github.com/adobe-fonts/source-code-pro/) and [Lato](http://www.latofonts.com/lato-free-fonts/), that all are freely available online if you don't have them already. You should install these before proceeding.
 
 On a Linux system, this should give you what you need:
 
 ```
-sudo apt-get update 
-sudo apt-get install texlive-xetex -y 
-sudo apt-get install texlive-bibtex-extra biber -y 
-sudo apt-get install fonts-ebgaramond -y 
-wget https://github.com/adobe-fonts/source-code-pro/archive/1.017R.zip 
-unzip 1.017R.zip  
-sudo cp source-code-pro-1.017R/OTF/*.otf /usr/local/share/fonts/ 
-sudo apt-get install fonts-lato -y 
+sudo apt-get update
+sudo apt-get install texlive-xetex -y
+sudo apt-get install texlive-bibtex-extra biber -y
+sudo apt-get install fonts-ebgaramond -y
+wget https://github.com/adobe-fonts/source-code-pro/archive/1.017R.zip
+unzip 1.017R.zip
+sudo cp source-code-pro-1.017R/OTF/*.otf /usr/local/share/fonts/
+sudo apt-get install fonts-lato -y
 ```
 
 On an OSX system, assuming [MacTeX](http://tug.org/mactex/mactex-download.html) and [homebrew](https://brew.sh/) are installed and updated, this will get you the fonts and other LaTeX packages needed for this template:
@@ -38,16 +41,16 @@ brew update
 brew tap caskroom/fonts
 brew cask install font-eb-garamond font-source-code-pro font-lato
 sudo tlmgr update --self
-sudo tlmgr install biblatex titling titlesec quotchap lettrine appendix units tocloft draftwatermark everypage wasysym logreq xstring collection-fontsrecommended texliveonfly 
+sudo tlmgr install biblatex titling titlesec quotchap lettrine appendix units tocloft draftwatermark everypage wasysym logreq xstring collection-fontsrecommended texliveonfly
 ```
 
-On Windows the usual pointing and clicking is required to download and install [LaTeX](http://http://miktex.org/download) and the fonts listed above. 
+On Windows the usual pointing and clicking is required to download and install [LaTeX](http://http://miktex.org/download) and the fonts listed above.
 
 To use **wildcatdown** from RStudio:
 
-1) Assuming you have already installed LaTeX and the fonts described above, install the latest version of [RStudio](http://www.rstudio.com/products/rstudio/download/). You can use wildcatdown without RStudio. For example, you can write the Rmd files in your favourite text editor (e.g. [Atom](https://atom.io/), [Notepad++](https://notepad-plus-plus.org/)). But RStudio is probably the easiest tool for writing both R code and text in your thesis. 
+1) Assuming you have already installed LaTeX and the fonts described above, install the latest version of [RStudio](http://www.rstudio.com/products/rstudio/download/). You can use wildcatdown without RStudio. For example, you can write the Rmd files in your favourite text editor (e.g. [Atom](https://atom.io/), [Notepad++](https://notepad-plus-plus.org/)). But RStudio is probably the easiest tool for writing both R code and text in your thesis.
 
-2) Install the **bookdown** and **wildcatdown** packages: 
+2) Install the **bookdown** and **wildcatdown** packages:
 
 ```
 if (!require("devtools")) install.packages("devtools", repos = "http://cran.rstudio.org")
@@ -57,7 +60,7 @@ devtools::install_github("emraher/wildcatdown")
 
 3) Use the **New R Markdown** dialog to select **Thesis**, here are the steps, and a screenshot below:
 
-File -> New File -> R Markdown... then choose 'From template', then choose 'KSU-Thesis, and enter `index` as the **Name**. Note that this will currently only **Knit** if you name the directory `index` at this step. 
+File -> New File -> R Markdown... then choose 'From template', then choose 'KSU-Thesis, and enter `index` as the **Name**. Note that this will currently only **Knit** if you name the directory `index` at this step.
 
 ![](ksu_thesis_rmd.png)
 
@@ -74,7 +77,7 @@ rmarkdown::draft('index.Rmd', template = 'thesis', package = 'wildcatdown', crea
 
 To render your thesis, open `index.Rmd` in RStudio and then hit the
 "knit" button. To change the output formats between PDF, gitbook and Word ,
-look at the `output:` field in `index.Rmd`and comment-out the formats 
+look at the `output:` field in `index.Rmd`and comment-out the formats
 you don't want.
 
 Alternatively, if you're not using RStudio, you can use this from the R console:
@@ -92,7 +95,7 @@ The following components are ones you should edit to customize your thesis:
 ### `_bookdown.yml`
 
 This is the main configuration file for your thesis. Arrange the order of your
-chapters in this file and ensure that the names match the names in your folders. 
+chapters in this file and ensure that the names match the names in your folders.
 ### `index.Rmd`
 
 This file contains all the meta information that goes at the beginning of your
@@ -100,12 +103,12 @@ document. You'll need to edit this to put your name in, the title of your thesis
 
 ### `01-chap1.Rmd`, etc.
 
-These are the Rmd files for each chapter in your dissertation. Write your thesis in these. If you're writing in RStudio, you may find the [wordcount addin](https://github.com/benmarwick/wordcountaddin) useful for getting word counts and readability statistics in R markdown documents. 
+These are the Rmd files for each chapter in your dissertation. Write your thesis in these. If you're writing in RStudio, you may find the [wordcount addin](https://github.com/benmarwick/wordcountaddin) useful for getting word counts and readability statistics in R markdown documents.
 
 ### `bib/`
 
-Store your bibliography (as bibtex files) here. We recommend using the [citr addin](https://github.com/crsh/citr) and [Zotero](https://www.zotero.org/) to 
-efficiently manage and insert citations. 
+Store your bibliography (as bibtex files) here. We recommend using the [citr addin](https://github.com/crsh/citr) and [Zotero](https://www.zotero.org/) to
+efficiently manage and insert citations.
 
 ### `csl/`
 
@@ -114,24 +117,24 @@ citation styles is https://github.com/citation-style-language/styles#readme
 
 ### `figure/` and `data/`
 
-Store your figures and data here and reference them in your R Markdown files. 
+Store your figures and data here and reference them in your R Markdown files.
 
 ## Related projects
 
 This project has drawn directly on code and ideas in the following:
 
 - https://github.com/benmarwick/huskydown
-- https://github.com/UWIT-IAM/UWThesis    
-- https://github.com/stevenpollack/ucbthesis  
-- https://github.com/suchow/Dissertate    
-- https://github.com/SeungkiKwak/Kwak_S_PhD_thesis    
-- https://github.com/dhalperi/uwthesis-tweaked     
+- https://github.com/UWIT-IAM/UWThesis
+- https://github.com/stevenpollack/ucbthesis
+- https://github.com/suchow/Dissertate
+- https://github.com/SeungkiKwak/Kwak_S_PhD_thesis
+- https://github.com/dhalperi/uwthesis-tweaked
 
 Other relevant projects:
 
-- Ed Berry's blog post ['Writing your thesis with bookdown'](https://eddjberry.netlify.com/post/writing-your-thesis-with-bookdown/), Posted on September 25, 2017    
+- Ed Berry's blog post ['Writing your thesis with bookdown'](https://eddjberry.netlify.com/post/writing-your-thesis-with-bookdown/), Posted on September 25, 2017
 - Rosanna van Hespen's ([@rosannavhespen](https://twitter.com/rosannavhespen?lang=en)) five blog posts on ['Writing your thesis with R Markdown'](https://rosannavanhespenresearch.wordpress.com/2016/02/03/writing-your-thesis-with-r-markdown-1-getting-started/)
-- [thesisdowndss](https://github.com/mine-cetinkaya-rundel/thesisdowndss) by Mine Cetinkaya-Rundel at Duke University    
+- [thesisdowndss](https://github.com/mine-cetinkaya-rundel/thesisdowndss) by Mine Cetinkaya-Rundel at Duke University
 - [beaverdown](https://github.com/zkamvar/beaverdown) by Zhian Kamvar at Oregon State University
 
 ## Contributing

@@ -6,7 +6,7 @@
 [![Linux Build Status](https://travis-ci.org/emraher/wildcatdown.svg?branch=master)](https://travis-ci.org/emraher/wildcatdown)
 [![Windows Build Status](https://ci.appveyor.com/api/projects/status/4ejevtp69fcrr31o?svg=true)](https://ci.appveyor.com/project/emraher/wildcatdown)
 
-If you are new to working with `bookdown` and `rmarkdown`, please read over the documentation available in huskydown PDF template (which you can create by following the simple instructions below) and the [bookdown book](https://bookdown.org/yihui/bookdown/).
+If you are new to working with `bookdown` and `rmarkdown`, please read over the documentation available in wildcatdown PDF template (which you can create by following the simple instructions below) and the [bookdown book](https://bookdown.org/yihui/bookdown/).
 
 This project provides a template for writing a PhD thesis in R Markdown, and rendering those files into a PDF formatted according to [the requirements of the Kansas State University](https://www.k-state.edu/grad/etdr/etdr-handbook.pdf). It uses the [Kansas State University Thesis class](https://www.k-state.edu/grad/etdr/template/latex_source.zip) to convert R Markdown files into a PDF formatted ready for submission at KSU. This project was inspired by the [thesisdown](https://github.com/ismayc/thesisdown), [bookdown](https://github.com/rstudio/bookdown), and [huskydown](https://github.com/benmarwick/huskydown) packages.
 
@@ -30,13 +30,13 @@ Our PDF template requires some specific fonts, [EB Garamond](https://github.com/
 On a Linux system here's the simplest way to install the fonts:
 
 ```
-git clone https://github.com/benmarwick/huskydown
-cd huskydown && unzip inst/fonts.zip
+git clone https://github.com/emraher/wildcatdown
+cd wildcatdown && unzip inst/fonts.zip
 cp inst/fonts -r ~/usr/local/share/fonts
 sudo fc-cache -f -v
 ```
 
-On an OSX system you can download a copy of the fonts in this repository with <https://github.com/benmarwick/huskydown/raw/master/fonts.zip>, unzip and move them to your fonts directory, or, assuming [homebrew](https://brew.sh/) is installed and updated, this will get you the fonts needed for this template:
+On an OSX system you can download a copy of the fonts in this repository with <https://github.com/emraher/wildcatdown/raw/master/fonts.zip>, unzip and move them to your fonts directory, or, assuming [homebrew](https://brew.sh/) is installed and updated, this will get you the fonts needed for this template:
 
 ```
 brew update
@@ -44,7 +44,7 @@ brew tap caskroom/fonts
 brew cask install font-eb-garamond font-source-code-pro font-lato
 ```
 
-On Windows the usual pointing and clicking is required to install the fonts listed above. You can download a copy of the fonts in this repository at <https://github.com/benmarwick/huskydown/raw/master/fonts.zip>, unzip and move them to your fonts directory.
+On Windows the usual pointing and clicking is required to install the fonts listed above. You can download a copy of the fonts in this repository at <https://github.com/emraher/wildcatdown/raw/master/fonts.zip>, unzip and move them to your fonts directory.
 
 ### Starting to write your thesis
 

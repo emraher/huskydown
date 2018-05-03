@@ -7,8 +7,12 @@ init:
         Invoke-WebRequest http://raw.github.com/krlmlr/r-appveyor/master/scripts/appveyor-tool.ps1 -OutFile "..\appveyor-tool.ps1"
         Import-Module '..\appveyor-tool.ps1'
 
+
 install:
-  ps: Bootstrap
+  ps: |
+        Bootstrap
+        choco install -y miktex
+  cmd:  refreshenv
 
 cache:
   - C:\RLibrary
@@ -17,6 +21,10 @@ cache:
 
 build_script:
   - travis-tool.sh install_deps
+
+before_test:
+  - cinst pandoc
+  - ps: $env:Path += ";C:\Program Files (x86)\Pandoc\"
 
 test_script:
   - travis-tool.sh run_tests

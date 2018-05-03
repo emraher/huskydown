@@ -13,15 +13,20 @@ Description: Using the bookdown package and LaTeX and Word thesis templates from
     and analyses as well. Based on Chester Ismay's thesisdown and Ben Marwick's huskydown.
 Maintainer: Emrah Er <eer@eremrah.com>
 Depends:
-    R (>= 3.2.0),
+    R (>= 3.4.4)
+Imports:
+    bookdown,
+    rmarkdown,
+    knitr,
+    git2r,
+    tinytex,
     devtools,
     dplyr,
-    ggplot2,
-    bookdown,
-    knitr,
-    git2r
+    ggplot2
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-SystemRequirements: pandoc (>= 1.18) - http://pandoc.org
 RoxygenNote: 6.0.1
-License: MIT + file LICENSE
+SystemRequirements: pandoc (>= 1.18) - http://pandoc.org
+Suggests: 
+    testthat

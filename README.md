@@ -2,15 +2,10 @@
 
 # wildcatdown <img src="inst/rmarkdown/templates/thesis/skeleton/figure/ksu.png" align="right" />
 
-[![Travis-CI Build Status](https://travis-ci.org/benmarwick/huskydown.svg?branch=master)](https://travis-ci.org/benmarwick/huskydown) 
+[![Travis-CI Build Status](https://travis-ci.org/emraher/wildcatdown.svg?branch=master)](https://travis-ci.org/emraher/wildcatdown)
+[![Linux Build Status](https://travis-ci.org/emraher/wildcatdown.svg?branch=master)](https://travis-ci.org/emraher/wildcatdown)
+[![Windows Build Status](https://ci.appveyor.com/api/projects/status/4ejevtp69fcrr31o?svg=true)](https://ci.appveyor.com/project/emraher/wildcatdown)
 
-This project provides a template for writing a PhD thesis in R Markdown, and rendering those files into a PDF formatted according to [the requirements of the University of Washington](https://grad.uw.edu/for-students-and-post-docs/degree-requirements/thesisdissertation/final-submission-of-your-thesisdissertation/). It uses the [University of Washington Thesis class](http://staff.washington.edu/fox/tex/) to convert R Markdown files into a PDF formatted ready for submission at UW. This project was inspired by the [thesisdown](https://github.com/ismayc/thesisdown) and [bookdown](https://github.com/rstudio/bookdown) packages.
-
-Currently, the PDF and gitbook versions are fully-functional, and are the focus of this package. The word and epub versions are in development, have no templates behind them, and are essentially calls to the appropriate functions in bookdown.
-
-[![Linux Build
-Status](https://travis-ci.org/emraher/wildcatdown.svg?branch=master)](https://travis-ci.org/emraher/wildcatdown)
-[![Windows Build
 If you are new to working with `bookdown` and `rmarkdown`, please read over the documentation available in huskydown PDF template (which you can create by following the simple instructions below) and the [bookdown book](https://bookdown.org/yihui/bookdown/).
 
 This project provides a template for writing a PhD thesis in R Markdown, and rendering those files into a PDF formatted according to [the requirements of the Kansas State University](https://www.k-state.edu/grad/etdr/etdr-handbook.pdf). It uses the [Kansas State University Thesis class](https://www.k-state.edu/grad/etdr/template/latex_source.zip) to convert R Markdown files into a PDF formatted ready for submission at KSU. This project was inspired by the [thesisdown](https://github.com/ismayc/thesisdown), [bookdown](https://github.com/rstudio/bookdown), and [huskydown](https://github.com/benmarwick/huskydown) packages.
@@ -19,14 +14,14 @@ This project provides a template for writing a PhD thesis in R Markdown, and ren
 
 ### Initial setup
 
-Using **wildcatdown** has some prerequisites, such as Pandoc, LaTeX and some fonts. To compile PDF documents using **R**, you need to have Pandoc, LaTeX and several related packages installed. If you have a recent version of  [RStudio](http://www.rstudio.com/products/rstudio/download/), then you already have Pandoc and don't need to do anything more about that. 
+Using **wildcatdown** has some prerequisites, such as Pandoc, LaTeX and some fonts. To compile PDF documents using **R**, you need to have Pandoc, LaTeX and several related packages installed. If you have a recent version of  [RStudio](http://www.rstudio.com/products/rstudio/download/), then you already have Pandoc and don't need to do anything more about that.
 
 Next is LaTeX. By far the easiest way to install LaTeX on any platform is with the [`tinytex`](https://yihui.name/tinytex/) package:
 
 ```
 install.packages(c('tinytex', 'rmarkdown'))
 tinytex::install_tinytex()
-# after restarting RStudio, confirm that you have LaTeX with 
+# after restarting RStudio, confirm that you have LaTeX with
 tinytex:::is_tinytex()
 ```
 
@@ -49,13 +44,13 @@ brew tap caskroom/fonts
 brew cask install font-eb-garamond font-source-code-pro font-lato
 ```
 
-On Windows the usual pointing and clicking is required to install the fonts listed above. You can download a copy of the fonts in this repository at <https://github.com/benmarwick/huskydown/raw/master/fonts.zip>, unzip and move them to your fonts directory. 
+On Windows the usual pointing and clicking is required to install the fonts listed above. You can download a copy of the fonts in this repository at <https://github.com/benmarwick/huskydown/raw/master/fonts.zip>, unzip and move them to your fonts directory.
 
 ### Starting to write your thesis
 
 To use **wildcatdown** from [RStudio](http://www.rstudio.com/products/rstudio/download/):
 
-1) Ensure that you have already installed LaTeX and the fonts described above, and are using the latest version of [RStudio](http://www.rstudio.com/products/rstudio/download/). You can use wildcatdown without RStudio. For example, you can write the Rmd files in your favourite text editor (e.g. [Atom](https://atom.io/), [Notepad++](https://notepad-plus-plus.org/)). But RStudio is probably the easiest tool for writing both R code and text in your thesis. 
+1) Ensure that you have already installed LaTeX and the fonts described above, and are using the latest version of [RStudio](http://www.rstudio.com/products/rstudio/download/). You can use wildcatdown without RStudio. For example, you can write the Rmd files in your favourite text editor (e.g. [Atom](https://atom.io/), [Notepad++](https://notepad-plus-plus.org/)). But RStudio is probably the easiest tool for writing both R code and text in your thesis.
 
 2) Install the **bookdown** and **wildcatdown** packages:
 
@@ -77,11 +72,11 @@ Or if you're not using RStudio, run this line in your R console to create a new 
 rmarkdown::draft('index.Rmd', template = 'thesis', package = 'wildcatdown', create_dir = TRUE)
 ```
 
-### Day-to-day writing of your thesis 
+### Day-to-day writing of your thesis
 
-You need to edit the individual chapter R Markdown files to write your thesis. 
+You need to edit the individual chapter R Markdown files to write your thesis.
 
-You can write in the Rmd files without RStudio (in fact RStudio lacks some conveniences for writing, such as live spell-checking and live word count). So you may prefer to do some writing and editing your Rmd files in your favourite text editor. I frequently use [Atom](https://atom.io/), [Notepad++](https://notepad-plus-plus.org/), and [Emacs](https://www.gnu.org/software/emacs/). But I come back to RStudio to create the PDF and work on the R code in my documents. 
+You can write in the Rmd files without RStudio (in fact RStudio lacks some conveniences for writing, such as live spell-checking and live word count). So you may prefer to do some writing and editing your Rmd files in your favourite text editor. I frequently use [Atom](https://atom.io/), [Notepad++](https://notepad-plus-plus.org/), and [Emacs](https://www.gnu.org/software/emacs/). But I come back to RStudio to create the PDF and work on the R code in my documents.
 
 While writing, you should `git commit` your work frequently, after every major activity on your thesis. For example, every few paragraphs or section of text, and after major step of analysis development. You should `git push` at the end of each work session before you leave your computer or change task. For gentle novice-friendly guide to getting starting with using Git with R and RStudio, see <http://happygitwithr.com/>.
 
@@ -103,7 +98,7 @@ The following components are ones you should edit to customize your thesis:
 
 ### `_bookdown.yml`
 
-This is the main configuration file for your thesis. It determines what Rmd files are included in the output, and in what order. Arrange the order of your chapters in this file and ensure that the names match the names in your folders. 
+This is the main configuration file for your thesis. It determines what Rmd files are included in the output, and in what order. Arrange the order of your chapters in this file and ensure that the names match the names in your folders.
 
 ### `index.Rmd`
 
@@ -112,11 +107,11 @@ document. You'll need to edit this to put your name on the first page, the title
 
 ### `01-chap1.Rmd`, `02-chap2.Rmd`, etc.
 
-These are the Rmd files for each chapter in your dissertation. Write your thesis in these. If you're writing in RStudio, you may find the [wordcount addin](https://github.com/benmarwick/wordcountaddin) useful for getting word counts and readability statistics in R markdown documents. You might also enjoy writing in these Rmd files with [Atom](https://atom.io/), [Notepad++](https://notepad-plus-plus.org/), [Sublime Text](https://www.sublimetext.com/), and [Emacs](https://www.gnu.org/software/emacs/). 
+These are the Rmd files for each chapter in your dissertation. Write your thesis in these. If you're writing in RStudio, you may find the [wordcount addin](https://github.com/benmarwick/wordcountaddin) useful for getting word counts and readability statistics in R markdown documents. You might also enjoy writing in these Rmd files with [Atom](https://atom.io/), [Notepad++](https://notepad-plus-plus.org/), [Sublime Text](https://www.sublimetext.com/), and [Emacs](https://www.gnu.org/software/emacs/).
 
 ### `bib/`
 
-Store your bibliography (as bibtex files) here. We recommend using the [citr addin](https://github.com/crsh/citr) and [Zotero](https://www.zotero.org/) to efficiently manage and insert citations. 
+Store your bibliography (as bibtex files) here. We recommend using the [citr addin](https://github.com/crsh/citr) and [Zotero](https://www.zotero.org/) to efficiently manage and insert citations.
 
 ### `csl/`
 
